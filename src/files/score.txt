@@ -1,0 +1,5 @@
+Komputer 0 : 1 Gracz 2019-01-07
+Komputer 1 : 0 Gracz 2019-01-07
+Komputer 1 : 1 Gracz 2019-01-07
+Komputer 0 : 1 Gracz 2019-01-11
+Komputer 0 : 1 Gracz 2019-02-03
