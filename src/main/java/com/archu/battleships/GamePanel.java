@@ -1,3 +1,5 @@
+package main.java.com.archu.battleships;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -87,8 +89,8 @@ public class GamePanel extends JPanel implements ActionListener {
         Image fire = null;
         Image water = null;
         try {
-            fire = ImageIO.read(getClass().getResource("/files/fire.png"));
-            water = ImageIO.read(getClass().getResource("/files/water.png"));
+            fire = ImageIO.read(getClass().getResource("/main/resources/fire.png"));
+            water = ImageIO.read(getClass().getResource("/main/resources/water.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -124,8 +126,8 @@ public class GamePanel extends JPanel implements ActionListener {
         Image fire = null;
         Image water = null;
         try {
-            fire = ImageIO.read(getClass().getResource("/files/fire.png"));
-            water = ImageIO.read(getClass().getResource("/files/water.png"));
+            fire = ImageIO.read(getClass().getResource("/main/resources/fire.png"));
+            water = ImageIO.read(getClass().getResource("/main/resources/water.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -161,7 +163,7 @@ public class GamePanel extends JPanel implements ActionListener {
             int x = p.getRow();
             int y = p.getColumn();
             try {
-                Image sunk = ImageIO.read(getClass().getResource("/files/sunk.png"));
+                Image sunk = ImageIO.read(getClass().getResource("/main/resources/sunk.png"));
                 answerButtons[x][y].setIcon(resizeIcon(new ImageIcon(sunk)));
             } catch (Exception ex) {
                 ex.printStackTrace();;
@@ -174,7 +176,7 @@ public class GamePanel extends JPanel implements ActionListener {
             int x = p.getRow();
             int y = p.getColumn();
             try {
-                Image sunk = ImageIO.read(getClass().getResource("/files/sunk.png"));
+                Image sunk = ImageIO.read(getClass().getResource("/main/resources/sunk.png"));
                 playerButtons[x][y].setIcon(resizeIcon(new ImageIcon(sunk)));
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -186,7 +188,7 @@ public class GamePanel extends JPanel implements ActionListener {
         for (Ship ship : player.getShips()) {
             for (Point point : ship.getCoordinates()) {
                 try {
-                    Image battleShip = ImageIO.read(getClass().getResource("/files/battleship.png"));
+                    Image battleShip = ImageIO.read(getClass().getResource("/main/resources/battleship.png"));
                     playerButtons[point.getRow()][point.getColumn()].setIcon(resizeIcon(new ImageIcon(battleShip)));
                 } catch (Exception ex) {
                     ex.printStackTrace();

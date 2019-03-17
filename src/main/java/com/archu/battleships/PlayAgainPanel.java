@@ -1,3 +1,5 @@
+package main.java.com.archu.battleships;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -48,7 +50,7 @@ public class PlayAgainPanel extends JPanel implements ActionListener {
         } else if (e.getSource() == saveButton) {
             FileWriter fileWriter;
             try {
-                fileWriter = new FileWriter(new File("C:\\Users\\Archu\\IdeaProjects\\BattleShips\\src\\files\\score.txt"), true);
+                fileWriter = new FileWriter(new File("C:\\Users\\Archu\\IdeaProjects\\main.java.com.archu.battleships.BattleShips\\src\\main.resources\\score.txt"), true);
                 fileWriter.write("Komputer " + computerScore + " : " + playerScore + " Gracz" + " " + localDate);
                 fileWriter.write(System.getProperty("line.separator"));
                 fileWriter.close();

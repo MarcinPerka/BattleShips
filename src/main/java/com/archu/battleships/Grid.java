@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
+package main.java.com.archu.battleships;
+
 import java.util.Random;
 
 public class Grid {

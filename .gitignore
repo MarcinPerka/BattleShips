@@ -83,10 +83,10 @@ local.properties
 .idea/**/dictionaries
 .idea/**/shelf
 
-# Generated files
+# Generated main.resources
 .idea/**/contentModel.xml
 
-# Sensitive or high-churn files
+# Sensitive or high-churn main.resources
 .idea/**/dataSources/
 .idea/**/dataSources.ids
 .idea/**/dataSources.local.xml
@@ -100,7 +100,7 @@ local.properties
 .idea/**/libraries
 
 # Gradle and Maven with auto-import
-# When using Gradle or Maven with auto-import, you should exclude module files,
+# When using Gradle or Maven with auto-import, you should exclude module main.resources,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
 # .idea/modules.xml
@@ -158,7 +158,7 @@ fabric.properties
 # Log file
 *.log
 
-# BlueJ files
+# BlueJ main.resources
 *.ctxt
 
 # Mobile Tools for Java (J2ME)

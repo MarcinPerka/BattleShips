@@ -1,3 +1,5 @@
+package main.java.com.archu.battleships;
+
 import javax.swing.*;
 import java.awt.*;
 

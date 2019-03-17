@@ -1,3 +1,5 @@
+package main.java.com.archu.battleships;
+
 import java.awt.*;
 
 public class BattleShips {

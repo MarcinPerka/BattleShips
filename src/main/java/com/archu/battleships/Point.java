@@ -1,3 +1,5 @@
+package main.java.com.archu.battleships;
+
 import java.util.Objects;
 
 public class Point {
