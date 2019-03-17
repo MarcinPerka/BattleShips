@@ -1,5 +1,7 @@
 package main.java.com.archu.battleships;
 
+import main.java.com.archu.battleships.view.GamePanel;
+
 import java.awt.*;
 
 public class BattleShips {

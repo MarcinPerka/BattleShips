@@ -1,4 +1,4 @@
-package main.java.com.archu.battleships;
+package main.java.com.archu.battleships.model;
 
 interface IComputer {
     Point randomShot();

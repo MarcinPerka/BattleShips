@@ -1,4 +1,4 @@
-package main.java.com.archu.battleships;
+package main.java.com.archu.battleships.view;
 
 import javax.swing.*;
 import java.awt.*;

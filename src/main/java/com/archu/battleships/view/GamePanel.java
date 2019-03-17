@@ -1,4 +1,9 @@
-package main.java.com.archu.battleships;
+package main.java.com.archu.battleships.view;
+
+import main.java.com.archu.battleships.model.Computer;
+import main.java.com.archu.battleships.model.Player;
+import main.java.com.archu.battleships.model.Point;
+import main.java.com.archu.battleships.model.Ship;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
