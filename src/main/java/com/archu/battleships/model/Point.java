@@ -2,9 +2,12 @@ package main.java.com.archu.battleships.model;
 
 import java.util.Objects;
 
+/**
+ * Coordinates of ships. Each ship has own List with points (x,y) of grid in which is placed.
+ */
 public class Point {
-    int row;
-    int column;
+    private int row;
+    private int column;
 
     public Point(int row, int column) {
         this.row = row;

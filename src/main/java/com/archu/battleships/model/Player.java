@@ -11,14 +11,13 @@ public class Player {
     private Grid gameOpponentGrid;
     private int score;
 
-
     public Player() {
         ships = new ArrayList<>();
         gameGrid = new Grid();
         gameOpponentGrid = new Grid();
         score = 0;
 
-        for (int i = 0; i < numberOfShips; i++) {
+        for (int i = 0; i < numberOfShips; i++) { //init ships
             ships.add(new Ship(sizeOfShips[i]));
         }
         placeShips();
@@ -34,6 +33,9 @@ public class Player {
         return hasAlive;
     }
 
+    /**
+     * Place in grid initialized ships .
+     */
     public void placeShips() {
         for (Ship ship : ships) {
             gameGrid.add(ship);
@@ -66,6 +68,10 @@ public class Player {
     }
 
 
+    /**
+     * @param p - Point which was selected by opponent to shot.
+     * @return - Null or ship which was hit.
+     */
     public Ship getHit(Point p) {
         Ship hitShip = null;
         data:
@@ -84,6 +90,11 @@ public class Player {
 
     }
 
+    /**
+     * @param hit - True/9 ship was hit, else False/8 missed
+     * @param row - row of grid
+     * @param col - column of grid
+     */
     public void processHit(boolean hit, int row, int col) {
         if (hit) {
             gameOpponentGrid.getGrid()[row][col] = 9;

@@ -8,8 +8,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.time.LocalDate;
 
+/**
+ * The panel that appears after the game.
+ * The panel shows the current balance of the game and allows you to play again, save the result or exit the game
+ */
+
 public class PlayAgainPanel extends JPanel implements ActionListener {
-    private LocalDate localDate = LocalDate.now();
+
+    private LocalDate localDate = LocalDate.now(); // LocalDate and score is available to save in txt file
     private int computerScore, playerScore;
     private JButton playButton, exitButton, saveButton;
     private JLabel info;
@@ -50,7 +56,7 @@ public class PlayAgainPanel extends JPanel implements ActionListener {
         } else if (e.getSource() == saveButton) {
             FileWriter fileWriter;
             try {
-                fileWriter = new FileWriter(new File("C:\\Users\\Archu\\IdeaProjects\\main.java.com.archu.battleships.BattleShips\\src\\main.resources\\score.txt"), true);
+                fileWriter = new FileWriter(new File("main/resources/score.txt"), true);
                 fileWriter.write("Komputer " + computerScore + " : " + playerScore + " Gracz" + " " + localDate);
                 fileWriter.write(System.getProperty("line.separator"));
                 fileWriter.close();

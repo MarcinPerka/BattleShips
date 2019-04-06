@@ -6,7 +6,7 @@ import java.util.List;
 public class Ship {
     private int length;
     private int hits = 0;
-    private List<Point> coordinates = new ArrayList<>();
+    private List<Point> coordinates = new ArrayList<>();// List of points (x,y) of grid in which ship is placed
 
     public Ship(int length) {
         this.length = length;

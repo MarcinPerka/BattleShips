@@ -8,7 +8,8 @@ import main.java.com.archu.battleships.model.Ship;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class GamePanel extends JPanel implements ActionListener {
@@ -19,7 +20,6 @@ public class GamePanel extends JPanel implements ActionListener {
     private Computer computer;
     private JLabel info, score, statusComputer, statusPlayer;
     private int computerScore, playerScore;
-    private Timer timer;
     private GameFrame gameFrame;
 
     public GamePanel(int computerScore, int playerScore) {
@@ -80,6 +80,9 @@ public class GamePanel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * @param e - when button with e.getSource() is pressed, process Player move
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton pressed = (JButton) e.getSource();
@@ -89,7 +92,12 @@ public class GamePanel extends JPanel implements ActionListener {
         processPlayerRound(x, y);
     }
 
-
+    /**
+     * @param x - row of grid
+     * @param y - column of grid
+     *          The player has the first move. After processing the shot, a message about its success is displayed,
+     *          and the icon on the field chosen by the player (hit, sunk - destroy method, missed) changes. Then computer is making its move (processComputerRound).
+     */
     public void processPlayerRound(int x, int y) {
         Image fire = null;
         Image water = null;
@@ -101,7 +109,7 @@ public class GamePanel extends JPanel implements ActionListener {
         }
 
         Ship hitShip = computer.getHit(new Point(x, y));
-        if (hitShip instanceof Ship) {
+        if (hitShip != null) {
             player.processHit(true, x, y);
             if (hitShip.isSunk()) {
                 destroyComputerShip(hitShip);
@@ -142,7 +150,7 @@ public class GamePanel extends JPanel implements ActionListener {
         int y = point.getColumn();
         Ship hitShip = player.getHit(point);
 
-        if (hitShip instanceof Ship) {
+        if (hitShip != null) {
             computer.processHit(true, x, y);
             playerButtons[x][y].setIcon(resizeIcon(new ImageIcon(fire)));
             if (hitShip.isSunk()) {
@@ -163,6 +171,9 @@ public class GamePanel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * @param ship - When the ship is sunk, the method changes the appearance of the fields on which the ship was placed
+     */
     public void destroyComputerShip(Ship ship) {
         for (Point p : ship.getCoordinates()) {
             int x = p.getRow();
@@ -171,11 +182,15 @@ public class GamePanel extends JPanel implements ActionListener {
                 Image sunk = ImageIO.read(getClass().getResource("/main/resources/sunk.png"));
                 answerButtons[x][y].setIcon(resizeIcon(new ImageIcon(sunk)));
             } catch (Exception ex) {
-                ex.printStackTrace();;
+                ex.printStackTrace();
+                ;
             }
         }
     }
 
+    /**
+     * @param ship - When the ship is sunk, the method changes the appearance of the fields on which the ship was placed
+     */
     public void destroyPlayerShip(Ship ship) {
         for (Point p : ship.getCoordinates()) {
             int x = p.getRow();
@@ -189,6 +204,9 @@ public class GamePanel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Adding player ships icons on the board to which he has a preview.
+     */
     public void addIconsToShips() {
         for (Ship ship : player.getShips()) {
             for (Point point : ship.getCoordinates()) {
